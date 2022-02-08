@@ -59,7 +59,7 @@ ifdef HAVE_SDL
 ifdef HAVE_JACK
 TARGET+=jsynth.exe
 endif
-TARGET+=ssynth
+TARGET+=ssynth.js
 endif
 
 all: SDL_CHECK $(TARGET)
@@ -92,12 +92,12 @@ jsynth.o:x0x.h
 jsynth.exe: jsynth.o x0x.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-ssynth:CFLAGS+=$(SCFLAGS)
-ssynth:LDFLAGS+=$(SLDFLAGS)
-ssynth:LDFLAGS+=-lm
+ssynth.js:CFLAGS+=$(SCFLAGS)
+ssynth.js:LDFLAGS+=$(SLDFLAGS)
+ssynth.js:LDFLAGS+=-lm
 
-ssynth.o:x0x.h
-ssynth: ssynth.o x0x.o
+ssynth.js.o:x0x.h
+ssynth.js: ssynth.js.o x0x.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 sdlaud.exe:CFLAGS+=$(SCFLAGS)
