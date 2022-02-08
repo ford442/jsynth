@@ -518,7 +518,6 @@ int main( int argc, char *argv[]) {
 	setbuf(stdout, 0);
 #endif
 #ifdef USE_X0X
-	int arg = 1;
 	char *fname = "song1.x0x";
 
 		load( fname);
