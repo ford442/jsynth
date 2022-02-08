@@ -96,8 +96,8 @@ ssynth.js:CFLAGS+=$(SCFLAGS)
 ssynth.js:LDFLAGS+=$(SLDFLAGS)
 ssynth.js:LDFLAGS+=-lm
 
-ssynth.js.o:x0x.h
-ssynth.js: ssynth.js.o x0x.o
+ssynth.o:x0x.h
+ssynth.js: ssynth.o x0x.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 sdlaud.exe:CFLAGS+=$(SCFLAGS)
@@ -107,10 +107,7 @@ sdlaud.exe:LDFLAGS+=-lm
 sdlaud.exe: sdlaud.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-ifdef WIN32
-# this is for ntohl
-catmid.exe: LDFLAGS+=-lws2_32
-endif
+
 
 %.exe:	%.c
 	$(CC) -o $@ $(CFLAGS) $^ $(LDFLAGS)
