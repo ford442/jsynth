@@ -98,7 +98,7 @@ ssynth.js:LDFLAGS+=-lm
 
 ssynth.o:x0x.h
 ssynth.js: ssynth.o x0x.o
-	$(CC) -o $@ $^ $(LDFLAGS) -sENVIRONMENT=web -sUSE_SDL=1 --post-js post.js -O2
+	$(CC) -o $@ $^ $(LDFLAGS) -sENVIRONMENT=web -sUSE_SDL=2 --post-js post.js -O2
 
 sdlaud.exe:CFLAGS+=$(SCFLAGS)
 sdlaud.exe:LDFLAGS+=$(SLDFLAGS)
