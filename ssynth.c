@@ -519,18 +519,10 @@ int main( int argc, char *argv[]) {
 #endif
 #ifdef USE_X0X
 	int arg = 1;
-	char *fname = 0;
-	if (argc > arg) {
-		fname = argv[arg++];
-	}
+	char *fname = "song1.x0x";
 
-	if (fname)
 		load( fname);
-	else
-	{
-		printf( "usage: jsynth <file.x0x>\n");
-		exit( 1);
-	}
+	
 #endif
 
 	printf( "playing [%s]\n", song_info);
