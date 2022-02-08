@@ -2,6 +2,7 @@
 #define USE_MATH
 #ifdef USE_MATH
 #include <math.h>
+#include <emscripten.h>
 #endif
 
 #include <SDL.h>
