@@ -1,12 +1,8 @@
 #include <stdio.h>
-#define USE_MATH
-#ifdef USE_MATH
 #include <math.h>
 #include <string.h>
 #include <emscripten.h>
-#endif
-
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 typedef struct {
 	uint8_t note;
@@ -749,6 +745,8 @@ int main( int argc, char *argv[]) {
 	}
 	SDL_FreeSurface( screen);
 	SDL_CloseAudioDevice(adev);
+	emscripten_set_main_loop((void (*)())main,0,0);
+
 	return 0;
 }
 
